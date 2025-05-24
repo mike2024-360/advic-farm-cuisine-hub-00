@@ -1,35 +1,44 @@
 
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Star, Truck, Shield } from "lucide-react";
+import { ShoppingCart, Star, Truck, Shield, Phone } from "lucide-react";
 
 const Products = () => {
   const products = [
     {
       id: 1,
       name: "Fresh Live Snails",
-      description: "Premium quality live snails, farm-fresh and ready for cooking",
-      image: "/lovable-uploads/5f54e3ec-20fa-4a0a-99d6-a1035c7c587f.png",
+      description: "Premium quality live snails, farm-fresh and ready for cooking. Bred under optimal conditions for vitality and fast growth.",
+      image: "/lovable-uploads/cf0463ec-5aa6-4f55-a07b-23b6077d5227.png",
       price: "₦2,500",
       unit: "per kg",
-      features: ["Farm Fresh", "Live Delivery", "Premium Size"]
+      features: ["Farm Fresh", "Live Delivery", "Premium Size", "Disease-Resistant"]
     },
     {
       id: 2,
-      name: "Nigerian Spice Blends",
-      description: "Authentic spice mixes for traditional Nigerian dishes",
-      image: "/lovable-uploads/b597bdb1-8114-4828-b827-486695826493.png",
+      name: "Garri on the GO!",
+      description: "Ready-to-consume Garri in convenient packaging. Made from cassava, groundnut, milk and sugar.",
+      image: "/lovable-uploads/25ee4fd3-aab8-454e-b13a-7221e1ad6302.png",
       price: "₦800",
       unit: "per pack",
-      features: ["100% Natural", "Traditional Recipe", "Premium Quality"]
+      features: ["Ready to Eat", "Natural Ingredients", "120g Pack", "Fresh & Crunchy"]
     },
     {
       id: 3,
       name: "Packaged Snail Meat",
-      description: "Pre-cleaned and packaged snail meat for convenience",
+      description: "Pre-cleaned and packaged snail meat for convenience. Hygienically processed and fresh frozen.",
       image: "/lovable-uploads/5f54e3ec-20fa-4a0a-99d6-a1035c7c587f.png",
       price: "₦3,200",
       unit: "per kg",
-      features: ["Ready to Cook", "Hygienically Packaged", "Fresh Frozen"]
+      features: ["Ready to Cook", "Hygienically Packaged", "Fresh Frozen", "High Survival Rate"]
+    },
+    {
+      id: 4,
+      name: "Kulikuli (US Available)",
+      description: "Delicious and crunchy Kulikuli now available internationally. Premium Nigerian snack made with traditional recipes.",
+      image: "/lovable-uploads/20aa220c-025c-4a24-aac6-7a084d0ecb23.png",
+      price: "Contact",
+      unit: "for pricing",
+      features: ["International Shipping", "Traditional Recipe", "Crunchy Texture", "Premium Quality"]
     }
   ];
 
@@ -41,11 +50,23 @@ const Products = () => {
             Our Premium Products
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From farm-fresh snails to authentic Nigerian spices, discover our range of premium quality products
+            From farm-fresh snails to authentic Nigerian foods - discover our range of premium quality products bred under the best conditions
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Special Offer Banner */}
+        <div className="bg-green-600 text-white rounded-lg p-6 mb-12 text-center">
+          <h3 className="text-xl md:text-2xl font-bold mb-2">
+            Custom Orders Welcome! 🔥
+          </h3>
+          <p className="mb-4">Whatever you want of your snails, just inform us and we'll make it happen for you!</p>
+          <div className="flex items-center justify-center space-x-2">
+            <Phone size={20} />
+            <span className="font-bold">08067353063</span>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
               <div className="relative overflow-hidden">
@@ -56,7 +77,7 @@ const Products = () => {
                 />
                 <div className="absolute top-4 left-4">
                   <div className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Fresh
+                    Premium
                   </div>
                 </div>
               </div>
@@ -89,7 +110,7 @@ const Products = () => {
                 
                 <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
                   <ShoppingCart size={16} className="mr-2" />
-                  Add to Cart
+                  Order Now
                 </Button>
               </div>
             </div>
@@ -102,24 +123,24 @@ const Products = () => {
             <div className="bg-green-100 p-4 rounded-full mb-4">
               <Truck className="text-green-600" size={32} />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Fast Delivery</h3>
-            <p className="text-gray-600">Same-day delivery within Lagos and next-day nationwide</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Safe Nationwide Delivery</h3>
+            <p className="text-gray-600">Insulated containers ensure fresh delivery anywhere in Nigeria. An extra mile doesn't mean a thing!</p>
           </div>
           
           <div className="flex flex-col items-center">
             <div className="bg-green-100 p-4 rounded-full mb-4">
               <Shield className="text-green-600" size={32} />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Quality Guarantee</h3>
-            <p className="text-gray-600">100% satisfaction guaranteed or your money back</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Quality Breeding Practices</h3>
+            <p className="text-gray-600">Right parent stock selection with optimal humidity, temperature, and proper feeding supplements</p>
           </div>
           
           <div className="flex flex-col items-center">
             <div className="bg-green-100 p-4 rounded-full mb-4">
               <Star className="text-green-600" size={32} />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">Premium Quality</h3>
-            <p className="text-gray-600">Only the finest products make it to your table</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">Premium Quality Guarantee</h3>
+            <p className="text-gray-600">Quality is our watchword. Disease-resistant hatchlings with high survival rates and fast growth</p>
           </div>
         </div>
       </div>
